@@ -1,0 +1,25 @@
+<!--beauty_shop/mys/make_order/ent_order.wxml-->
+<view class="page">
+
+<view class="ent_order row" wx:for="{{list}}">
+<image src="{{item.simg}}"></image>
+<view class="com">
+<view>{{item.name}}</view>
+<view class="butts row">
+<view class="but" data-id="{{item.id}}" bindtap="toTuoke">拓客码</view>
+<view class="but" bindtap="toOrder" data-id="{{item.id}}" >管理页面</view>
+</view>
+</view>
+</view>
+
+  <view class="shade" hidden="{{!showhb}}">
+        <view class="hbLayer">
+            <view class="closeBtn">
+                <image bindtap="closehb" src="../../resource/close.png"></image>
+            </view>
+            <image class="hbimg" mode="widthFix" src="{{code}}"></image>
+            <view bindtap="dlimg" class="dlBtn">
+                <image src="../../resource/dl.png"></image>保存图片</view>
+        </view>
+    </view>
+</view>

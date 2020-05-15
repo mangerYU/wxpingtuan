@@ -1,0 +1,223 @@
+<view class="navbar" >
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+ 
+<!---->
+<view hidden="{{idIndex!=1}}" wx:for="{{wearList}}" wx:for-item="item" wx:key="id">
+ <view class="nulltext" wx:if='{{hides==0}}'>暂无数据</view>
+  <view wx:else='{{hides==1}}' class="order">
+     <view class="bgbor"  style="background-image:url('{{item.timebg}}')" >
+     <view class="residue_day">{{item.timeday}}</view>
+    <view>
+
+  <view class="proinfo">
+    <image src="{{item.simg}}" />
+    <view class="message">
+          <view>{{item.name}}</view>
+          <view style="font-size:20rpx">状态：{{proType}}</view>
+          <view style="font-size:25rpx;color:#FF0000;"> 活动倒计时
+          <text style="margin-left:40%;letter-spacing:2rpx"> {{item.todays}}{{item.timeout}}</text>
+          </view>
+    </view>
+    </view>
+
+        <view class="userinfo">
+            <view style="margin:0rpx 25rpx;">邀请人</view>
+
+          <view class="row info">
+     <view class="left row">
+            <image src="{{item.one.avatar}}"/>
+            <view class="col">
+                <view>姓名  {{item.one.nick}}</view>
+                <view>手机号  {{item.one.mobile}}</view>
+            </view> 
+     </view> 
+        <image data-phid="{{item.one.mobile}}" bindtap="phone" src="../../resource/phone.png"/>
+          </view>
+        </view>
+          <view class="userinfo">
+             <view style="margin:0rpx 6rpx 0rpx 25rpx;">被邀请人</view>
+          <view class="row info">
+         <view class="left row">
+            <image src="{{item.two.avatar}}"/>
+            <view class="col">
+                <view></view>
+                <view></view>
+            </view> 
+           </view> 
+          </view>
+        </view>
+    </view>
+     </view>
+  </view>
+</view>
+ 
+<!---->
+<view hidden="{{idIndex!=2}}"  wx:for="{{wearList}}" wx:for-item="item" wx:key="id">
+ <view class="nulltext" wx:if='{{hides==0}}'>暂无数据</view>
+
+  <view wx:else='{{hides==1}}' class="order">
+     <view class="bgbor"  style="background-image:url('{{item.timebg}}')" >
+     <view class="residue_day">{{item.timeday}}</view>
+    <view>
+
+  <view class="proinfo">
+    <image src="{{item.simg}}" />
+    <view class="message">
+          <view class="row">{{item.name}}
+          <button data-tuanid='{{item.id}}' bindtap="affirm">确认到店</button>
+          </view>
+          <view style="font-size:20rpx">状态：{{proType}}</view>
+          <view style="font-size:25rpx;color:#FF0000;"> 活动倒计时
+          <text style="margin-left:40%;letter-spacing:2rpx"> {{item.todays}}{{item.timeout}}</text>
+          </view>
+    </view>
+    </view>
+
+        <view class="userinfo">
+            <view style="margin:0rpx 25rpx;">邀请人</view>
+
+          <view class="row info">
+     <view class="left row">
+            <image src="{{item.one.avatar}}"/>
+            <view class="col">
+                <view>姓名1  {{item.one.nick}}</view>
+                <view>手机号  {{item.one.mobile}}</view>
+            </view> 
+     </view> 
+        <image  data-phid="{{item.one.mobile}}" bindtap="phone" src="../../resource/phone.png"/>
+          </view>
+        </view>
+          <view class="userinfo">
+            <view style="margin:0rpx 6rpx 0rpx 25rpx;">被邀请人</view>
+
+          <view class="row info">
+     <view class="left row">
+            <image src="{{item.two.avatar}}"/>
+            <view class="col">
+                <view>姓名  {{item.two.nick}}</view>
+                <view>手机号  {{item.two.mobile}}</view>
+            </view> 
+     </view> 
+      <image data-phid="{{item.two.mobile}}" bindtap="phone" src="../../resource/phone.png"/>
+          </view>
+        </view>
+
+    </view>
+     </view>
+
+
+  </view>
+</view>
+ 
+<!---->
+<view hidden="{{idIndex!=3}}"  wx:for="{{wearList}}" wx:for-item="item" wx:key="id">
+ <view class="nulltext" wx:if='{{hides==0}}'>暂无数据</view>
+  <view wx:else='{{hides==1}}' class="order">
+     <view class="bgbor"  style="background-image:url('{{item.timebg}}')" >
+     <view class="residue_day">{{item.timeday}}</view>
+    <view>
+
+  <view class="proinfo">
+    <image src="{{item.simg}}" />
+    <view class="message">
+          <view>{{item.name}}</view>
+          <view style="font-size:20rpx">状态：{{proType}}</view>
+          <view style="font-size:25rpx;color:#FF0000;visibility:hidden"> 活动倒计时
+          <text style="margin-left:40%;letter-spacing:2rpx"> {{item.todays}}{{item.timeout}}</text>
+          </view>
+    </view>
+    </view>
+
+        <view class="userinfo">
+            <view style="margin:0rpx 25rpx;">邀请人</view>
+
+          <view class="row info">
+     <view class="left row">
+            <image src="{{item.one.avatar}}"/>
+            <view class="col">
+                <view>姓名  {{item.one.nick}}</view>
+                <view>手机号  {{item.one.mobile}}</view>
+            </view> 
+     </view> 
+        <image data-phid="{{item.one.mobile}}" bindtap="phone" src="../../resource/phone.png"/>
+          </view>
+        </view>
+          <view class="userinfo">
+            <view style="margin:0rpx 6rpx 0rpx 25rpx;">被邀请人</view>
+
+          <view class="row info">
+     <view class="left row">
+            <image src="{{item.two.avatar}}"/>
+            <view class="col">
+                <view>姓名  {{item.two.nick}}</view>
+                <view>手机号  {{item.two.mobile}}</view>
+            </view> 
+     </view> 
+      <image data-phid="{{item.two.mobile}}" bindtap="phone" src="../../resource/phone.png"/>
+          </view>
+        </view>
+
+    </view>
+     </view>
+
+
+  </view>
+</view>
+<!---->
+<view hidden="{{idIndex!=4}}"  wx:for="{{wearList}}" wx:for-item="item" wx:key="id">
+ <view class="nulltext" wx:if='{{hides==0}}'>暂无数据</view>
+  <view wx:else='{{hides==1}}' class="order">
+     <view class="bgbor"  style="background-image:url('{{item.timebg}}')" >
+     <view class="residue_day">{{item.timeday}}</view>
+    <view>
+
+  <view class="proinfo">
+    <image src="{{item.simg}}" />
+    <view class="message">
+          <view>{{item.name}}</view>
+          <view style="font-size:20rpx">状态：{{proType}}</view>
+          <view style="font-size:25rpx;color:#FF0000;visibility:hidden"> 活动倒计时
+          <text style="margin-left:40%;letter-spacing:2rpx"> {{item.todays}}{{item.timeout}}</text>
+          </view>
+    </view>
+    </view>
+
+        <view class="userinfo">
+            <view style="margin:0rpx 25rpx;">邀请人</view>
+
+          <view class="row info">
+     <view class="left row">
+            <image src="{{item.one.avatar}}"/>
+            <view class="col">
+                <view>姓名  {{item.one.nick}}</view>
+                <view>手机号  {{item.one.mobile}}</view>
+            </view> 
+     </view> 
+        <image data-phid="{{item.one.mobile}}" bindtap="phone" src="../../resource/phone.png"/>
+          </view>
+        </view>
+          <view class="userinfo">
+            <view style="margin:0rpx 6rpx 0rpx 25rpx;">被邀请人</view>
+
+          <view class="row info">
+     <view class="left row">
+            <image src="{{item.two.avatar}}"/>
+            <view class="col">
+                <view>姓名  {{item.two.nick}}</view>
+                <view>手机号  {{item.two.mobile}}</view>
+            </view> 
+     </view> 
+      <image data-phid="{{item.two.mobile}}" bindtap="phone" src="../../resource/phone.png"/>
+          </view>
+        </view>
+
+    </view>
+     </view>
+
+
+  </view>
+</view>
+
+
+

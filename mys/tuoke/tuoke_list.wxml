@@ -1,0 +1,44 @@
+<import src="../../pages/common/common.wxml"></import>
+<view class="page">
+    <template is="official" data="{{config:config}}"></template>
+    <view class="list">
+        <view class="item {{theme.name}}" wx:for="{{userlist}}" wx:for-index="idx" wx:key="idx">
+            <view class="item_t">
+                <view class="flex-wap">
+                    <view>订单号:{{item['out_trade_no']}}</view>
+                    <view style="color:{{theme.color}};" wx:if="{{item.status==-1&&item.tuoke_status==1}}">等待中...</view>
+                    <view style="color:{{theme.color}};" wx:if="{{item.tuoke_status==4}}">已过期</view>
+                    <view style="color:{{theme.color}};" wx:if="{{item.status==1&&item.tuoke_status==2}}">到店领取</view>
+                    <view style="color:{{theme.color}};" wx:if="{{item.status==1&&item.tuoke_status==3}}">已核销</view>
+                </view>
+                <view>{{item.order.createtime}}</view>
+            </view>
+         <view  class="item_c">
+                <image src="{{item.simg}}"></image>
+                <view>
+                    <view class="title">{{item.name}}</view>
+                    <view class="flex-wap">
+                        <view></view>
+                        <view>{{item.total}}人拼单</view>
+                    </view>
+                </view>
+</view>
+            <view class="item_b">
+                <view class="tip" wx:if="{{item.tuoke_status==2||item.tuoke_status==1}}">还差
+            <text >{{item.total-item.team_total}}</text>人，剩余{{item.timeday}}{{item.timeout}}</view>
+
+                <view class="imgs" wx:if="{{item.tuoke_status==2||item.tuoke_status==3}}">
+                    <image src="{{item.avatar}}"></image>
+                </view>
+
+                    <view class="btn btn2" data-pid="{{item.pid}}" data-did="{{item.dian_yuan_id}}" bindtap="menu_on" >再领一份</view>
+                    <view class="btn btn2"  data-pid="{{item.pid}}" data-did="{{item.dian_yuan_id}}" data-gid="{{item.id}}" bindtap="menu_btn">查看活动</view>
+            </view>
+        </view>
+        <view class="error" wx:if="{{list.length==0||!list}}">
+            <image mode="widthFix" src="../../resource/error01.png"></image>
+            <view>没有订单哦~</view>
+        </view>
+    </view>
+
+</view>

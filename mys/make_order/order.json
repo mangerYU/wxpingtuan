@@ -1,0 +1,8 @@
+{
+  "usingComponents": {},
+  "i-count-down":"../../../distcount-down/index",
+  "navigationBarBackgroundColor": "#FF6666",
+  "navigationBarTitleText": "预约订单",
+  "onReachBottomDistance":30
+
+}

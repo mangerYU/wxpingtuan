@@ -1,0 +1,143 @@
+page {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  background-color: #EFEFF4;
+  overflow: auto;
+}
+.order{
+  margin-top: 20rpx;
+}
+.navbar {
+  flex: none;
+  display: flex;
+  background: #fff;
+}
+
+.navbar .item {
+  position: relative;
+  flex: auto;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  color: #999999;
+}
+
+.navbar .item.active {
+  color: #317EE7;
+  font-size: 30rpx;
+
+}
+
+.navbar .item.active:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 5rpx;
+  width: 65%;
+  margin-left: 36rpx;
+  background: #317EE7;
+
+}
+
+.bgbor {
+  width: 96%;
+  height: 400rpx;
+  margin:0rpx 2%;
+  border-radius: 10rpx;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  /* justify-content: space-around; */
+}
+
+.residue_day {
+  color: white;
+  font-size: 25rpx;
+  margin: 20rpx 0rpx 0rpx 6%;
+}
+
+.proinfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.proinfo image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+  background-color: red;
+  margin: 0rpx 40rpx;
+
+}
+
+.message {
+  width: 70%;
+  line-height: 50rpx;
+  color: #000000;
+  font-size: 25rpx;
+}
+
+.userinfo {
+  width: 95%;
+  height:85rpx;
+  border-top: 2rpx solid #D2D2D2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 2%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+ 
+}
+button{
+border-radius: 50rpx;
+width:27%;
+height: 45rpx;
+font-size:18rpx;
+color: #999;
+border-bottom:2rpx solid #999;
+margin: 0rpx;
+margin-left: 34%;
+}
+.info{
+  width: 76%;
+  justify-content: space-between;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  font-size:20rpx;
+}
+
+.left {
+  align-items: center;
+}
+
+.left image {
+  width: 60rpx;
+  height: 60rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+
+}
+.nulltext{
+width: 100%;
+font-size:30rpx;
+color: #999;
+text-align: center;
+margin-top: 10%;
+}

@@ -1,0 +1,94 @@
+<import src="../common/common.wxml"></import>
+<view class="page">
+    <!-- <template is="official" data="{{config:config}}"></template> -->
+    
+    <view class="top" style="background-image: url({{top_bgimg}});">
+    <view class="item" style="background-image: url({{top_black}});">
+       <text class="showtime" wx:if="{{time!=''}}">距离结束时间:{{time}}</text>
+       <text class="showtime" wx:else="{{time==0}}">距离结束时间:{{cstime}}</text>
+    </view>
+    </view>
+   <view class="text_tit">{{butTitle}}</view>  
+    <view class="member" style="background-image: url({{tuan_bgimg}});">
+ <view wx:if="{{type==1}}" class="cont">
+  <view>{{userlist_Title}}</view>
+</view>
+ <view wx:if="{{type==2}}" class="cont">
+  <view>{{userlist_Title}}</view>
+    <view class="member_hd">
+            <view class="member_item">
+                <image src="{{userlist.one.avatar}}"></image>
+                <view >{{one_name}}</view>
+            </view>
+            <view class="member_item">
+                <image src="{{user_bg}}"></image>
+            </view>
+        </view>
+</view>
+ <view wx:if="{{type==3}}" class="cont">
+  <view>{{userlist_Title}}</view>
+    <view class="member_hd">
+            <view class="member_item">
+                <image src="{{userlist.one.avatar}}"></image>
+                <view>{{one_name}}</view>
+            </view>
+            <view class="member_item">
+                <image src="{{userlist.two.avatar}}"></image>
+                <view>{{two_name}}</view>
+            </view>
+        </view>
+</view>
+</view>
+    <button wx:if="{{ifbut==1}}" class="butt" bindtap="menu_on"  type="getUserInfo">{{butText}}</button>
+    <button  wx:elif="{{ifbut==2}}" class="butt" bindtap="kaituan"  type="getUserInfo">{{butText}}</button>
+    <button  wx:else="{{ifbut==3}}" class="butt" bindtap="cantuan" type="getUserInfo">{{butText}}</button>
+
+    <view class="text_tit2">_____________   活动规则    _____________ </view>
+ <view class="guize" style="background-image: url({{guize_bg}});"></view>
+
+          <import src="../../../wxParse/wxParse.wxml"></import>
+        <view class="cont2">
+            <template is="wxParse" data="{{wxParseData:content2.nodes}}"></template>
+        </view>
+
+
+<view class="zhezhao {{isRuleTrue ? 'show':'hide'}}"  >
+<view class="zhecont" wx:if="{{buttype==1}}" style="background-image: url({{tkbg_login}});">
+<view class="shouquan">
+<view>为了保证您成功领取大礼包需向您申请以下权限:</view>
+<view>获取您的微信账号</view>
+<view>
+<button class="but1 but" bindgetuserinfo="bindgetuserinfo" open-type="getUserInfo" bindtap="zhezhao_on" type='primary'>立即登录</button>
+<view class="but2" bindtap="zhezhao_on" style="font-size:20rpx;"> 暂不登录</view>
+</view>
+</view>
+</view>
+
+<view class="zhecont" wx:elif="{{buttype==2}}" style="background-image: url({{tkbg_login}});">
+<view class="shouquan">
+<view>为了保证您成功领取大礼包需向您申请以下权限:</view>
+<view>获取您的手机号</view>
+<view>
+<button class="but1 but" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" type="primary" bindtap="zhezhao_on">立即授权</button>
+<view class="but2" bindtap="zhezhao_on" style="font-size:20rpx;"> 暂不授权</view>
+
+</view>
+</view>
+</view>
+
+<view class="zhecont" wx:else="{{buttype==3}}" style="background-image: url({{tkbg_fenx}});">
+<view class="fenxiang">
+<view>邀请好友助力后双方 
+即可到店享受专属VIP大礼包</view>
+
+<view class="but2">
+<button class="but1 but" open-type="share">立即分享</button>
+<view class="but3" bindtap="zhezhao_on"> 暂不分享</view>
+</view>
+</view>
+</view>
+</view>
+
+</view>
+
+  
